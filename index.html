@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<form>
+    <h2>Fake Text Area</h2>
+    <textarea name="fakeTextArea" id="fakeArea" cols="50" rows="10" oninput="fakeText()" placeholder="Type something"></textarea>
+</form>
+</body>
+</html>
+<script>
+    let str = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    let counter = 0;
+    let output = '';
+    function fakeText() {
+        output += str[counter];
+        document.getElementById('fakeArea').value = output;
+        counter++;
+        if (counter > str.length - 1) {
+            output = '';
+            counter = 0;
+        }
+    }
+</script>
